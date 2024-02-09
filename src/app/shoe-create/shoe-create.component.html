@@ -1,0 +1,21 @@
+<div class="form-container">
+  <form [formGroup]="shoeForm" (ngSubmit)="onSubmit()">
+      <div class="input-container">
+        <label for="brand" class="label">Brand:</label>
+        <input type="text" id="brand" formControlName="brand" class="input">
+      </div>
+
+      <div class="input-container">
+        <label for="model" class="label">Model:</label>
+        <input type="text" id="model" formControlName="model" class="input">
+      </div>  
+
+      <div class="input-container">
+        <label for="price" class="label">Price:</label>
+        <input type="number" id="price" formControlName="price" class="input">
+      </div>
+
+    <button class="button-87" type="submit">Create Shoe</button>
+
+  </form>
+</div>

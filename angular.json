@@ -60,7 +60,8 @@
               "buildTarget": "shoeInterface:build:production"
             },
             "development": {
-              "buildTarget": "shoeInterface:build:development"
+              "buildTarget": "shoeInterface:build:development",
+              "proxyConfig": "src/proxy.config.js"
             }
           },
           "defaultConfiguration": "development"
@@ -91,5 +92,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

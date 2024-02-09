@@ -1,0 +1,26 @@
+<div class="form-container">
+    <form [formGroup]="updateShoeForm" (ngSubmit)="onUpdateShoeSubmit()">
+      <div class="input-container">
+        <label for="updatedBrand">Updated Brand:</label>
+        <input type="text" id="updatedBrand" formControlName="updatedBrand">
+      </div>
+      
+      <div class="input-container">
+        <label for="updatedModel">Updated Model:</label>
+        <input type="text" id="updatedModel" formControlName="updatedModel">
+      </div>
+
+      <div class="input-container">
+        <label for="updatedPrice">Updated Price:</label>
+        <input type="number" id="updatedPrice" formControlName="updatedPrice">
+      </div>
+
+      <div class="input-container">
+        <label for="shoeIdToUpdate">Shoe ID:</label>
+        <input type="text" id="shoeIdToUpdate" formControlName="shoeIdToUpdate" required>      
+      </div>
+  
+      <button class="button-87" type="submit" [disabled]="!updateShoeForm.valid">Update Shoe</button>
+    </form>
+  </div>
+  

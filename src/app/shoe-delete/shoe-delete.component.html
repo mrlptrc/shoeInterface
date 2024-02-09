@@ -1,0 +1,12 @@
+<div class="form-container">
+    <form [formGroup]="deleteShoeForm" (ngSubmit)="onDeleteShoeSubmit()">
+
+      <div class="input-container">
+        <label for="shoeIdToDelete">Shoe ID:</label>
+        <input type="string" id="shoeIdToDelete" formControlName="shoeIdToDelete" required>
+      </div>
+
+      <button class="button-87" type="submit">Delete Shoe</button>
+
+    </form>
+</div>

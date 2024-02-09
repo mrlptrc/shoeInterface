@@ -1,0 +1,67 @@
+*{
+    font-family: sans-serif;
+}
+
+*, :after, :before {
+    border: 0 solid #000000;
+}
+
+.header{
+    display: flex;
+    justify-items: center;
+}
+
+.title{
+    width: 100%;
+    text-align: start;
+    margin-top: 2%;
+    margin-left: 4%;
+}
+
+.icons{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 30%;
+}
+
+#brand{
+    font-size: 20px;
+    justify-content: center;
+}
+
+.shoe-container{
+    display: flex;
+    justify-content: center;
+    margin-left: 2%;
+}
+
+.shoe-card{
+    width: 140px;
+    border: 1px solid #4e4d4d;
+    border-radius: 3%;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 3%;
+}
+
+#model{
+    height: 30px;
+}
+
+.footer-buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.h1{
+    right: 50%;
+}
+
+.idtext{
+    font-size: 10px;
+}
+
+.icons a{
+    color: inherit;
+}

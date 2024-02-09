@@ -8,6 +8,7 @@ import { ShoeService } from '../shoe.service';
   styleUrls: ['./shoe-update.component.css']
 })
 
+//To solve the problem, I would add the missing ngOnInit method to the ShoeDeleteComponent class.
 export class ShoeUpdateComponent implements OnInit {
   updateShoeForm: FormGroup;
   shoeIdToUpdate: string;
@@ -24,6 +25,7 @@ export class ShoeUpdateComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Add your initialization logic here
   }
 
   onUpdateShoeSubmit() {
@@ -39,17 +41,18 @@ export class ShoeUpdateComponent implements OnInit {
         price: updatedPrice
       };
 
-      if(updatedShoeId){
-        this.shoeService.updateShoe(updatedShoeId, updatedShoeData).subscribe(
-          (response) => {
-            console.log(updatedShoeData, "dentro do subscribe");
-            console.log('Shoe updated successfully:', response);
-          },
-          (error) => {
-            console.error('Error updating shoe:', error);
-          }
-        );
-     }
+        if(updatedShoeId){
+          //updated the code to use the new recommended syntax for subscribing to observables in RxJS.
+          this.shoeService.updateShoe(updatedShoeId, updatedShoeData).subscribe({
+            next: (response) => {
+              console.log(updatedShoeData, "dentro do subscribe");
+              console.log('Shoe updated successfully:', response);
+            },
+            error: (error) => {
+              console.error('Error updating shoe:', error);
+            }
+          });
+       }
     }
   }
 }

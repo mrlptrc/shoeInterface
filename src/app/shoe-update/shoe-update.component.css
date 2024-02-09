@@ -41,21 +41,20 @@ body{
 	font-size:12px;
 }
 
-/* Alterando o tamanho da fonte para o texto digitado */
 .input-container input::-webkit-input-placeholder {
-    font-size: 12px; /* Tamanho da fonte alterado */
+    font-size: 12px;
   }
   
   .input-container input:-moz-placeholder {
-    font-size: 12px; /* Tamanho da fonte alterado */
+    font-size: 12px;
   }
   
   .input-container input::-moz-placeholder {
-    font-size: 12px; /* Tamanho da fonte alterado */
+    font-size: 12px;
   }
   
   .input-container input:-ms-input-placeholder {
-    font-size: 12px; /* Tamanho da fonte alterado */
+    font-size: 12px;
   }
 
 .button-87 {

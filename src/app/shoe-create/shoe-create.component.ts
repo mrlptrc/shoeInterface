@@ -22,14 +22,15 @@ export class ShoeCreateComponent {
   onSubmit() {
     if (this.shoeForm.valid) {
       const shoeData = this.shoeForm.value;
-      this.shoeService.createShoe(shoeData).subscribe(
-        (response) => {
+      //updated the code to use the new recommended syntax for subscribing to observables in RxJS.
+      this.shoeService.createShoe(shoeData).subscribe({
+        next: (response) => {
           console.log('Shoe created successfully:', response);
         },
-        (error) => {
+        error: (error) => {
           console.error('Error creating shoe:', error);
         }
-      );
+      });
     }
   }
 }

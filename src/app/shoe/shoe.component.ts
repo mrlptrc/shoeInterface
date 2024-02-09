@@ -19,25 +19,27 @@ export class ShoeComponent implements OnInit {
   }
 
   fetchShoes() {
-    this.shoeService.getAllShoes().subscribe(
-      (data) => {
+    //updated the code to use the new recommended syntax for subscribing to observables in RxJS.
+    this.shoeService.getAllShoes().subscribe({
+      next: (data) => {
         this.shoes = data;
       },
-      (error) => {
+      error: (error) => {
         console.error('Error fetching shoes:', error);
       }
-    );
+    });
   }
 
   deleteShoe(id: string) {
-    this.shoeService.deleteShoe(id).subscribe(
-      (response) => {
+    //updated the code to use the new recommended syntax for subscribing to observables in RxJS.
+    this.shoeService.deleteShoe(id).subscribe({
+      next: (response) => {
         console.log('Shoe deleted successfully:', response);
         this.fetchShoes();
       },
-      (error) => {
+      error: (error) => {
         console.error('Error deleting shoe:', error);
       }
-    );
+    });
   }
 }

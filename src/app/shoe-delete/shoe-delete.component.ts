@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./shoe-delete.component.css']
 })
 
+//added the missing ngOnInit method to the ShoeDeleteComponent class.
 export class ShoeDeleteComponent implements OnInit {
   deleteShoeForm: FormGroup;
 
@@ -17,19 +18,22 @@ export class ShoeDeleteComponent implements OnInit {
     });  
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    // Add your initialization logic here
+  }
 
   onDeleteShoeSubmit() {
     const shoeIdToDelete = this.deleteShoeForm.get('shoeIdToDelete')?.value;
     if (shoeIdToDelete) {
-      this.shoeService.deleteShoe(shoeIdToDelete).subscribe(
-        () => {
+      //updated the code to use the new recommended syntax for subscribing to observables in RxJS.
+      this.shoeService.deleteShoe(shoeIdToDelete).subscribe({
+        next: () => {
           console.log('Shoe deleted successfully');
         },
-        (error) => {
+        error: (error) => {
           console.error('Error deleting shoe:', error);
         }
-      );
+      });
     }
   }
 }

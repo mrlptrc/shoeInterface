@@ -1,0 +1,8 @@
+<div class="popup-overlay" *ngIf="openPopup">
+    <div class="popup-container">
+        <div class="popup-content">
+            <p>{{data.message}}</p>
+            <button mat-button (click)="close()">Fechar</button>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ShoeService } from '../shoe.service';
+import { PopupService } from '../popup.service';
 
 @Component({
   selector: 'app-shoe-update',
@@ -13,7 +14,11 @@ export class ShoeUpdateComponent implements OnInit {
   updateShoeForm: FormGroup;
   shoeIdToUpdate: string;
 
-  constructor(private fb: FormBuilder, private shoeService: ShoeService) {
+  constructor(
+    private fb: FormBuilder, 
+    private shoeService: ShoeService,
+    public popupService: PopupService
+    ){
     this.updateShoeForm = this.fb.group({
       updatedBrand: ['', Validators.required],
       updatedModel: ['', Validators.required],
@@ -41,18 +46,16 @@ export class ShoeUpdateComponent implements OnInit {
         price: updatedPrice
       };
 
-        if(updatedShoeId){
-          //updated the code to use the new recommended syntax for subscribing to observables in RxJS.
+        if (updatedShoeId) {
           this.shoeService.updateShoe(updatedShoeId, updatedShoeData).subscribe({
             next: (response) => {
-              console.log(updatedShoeData, "dentro do subscribe");
-              console.log('Shoe updated successfully:', response);
+              this.popupService.openPopup('Shoe updated successfully', response);
             },
             error: (error) => {
-              console.error('Error updating shoe:', error);
+              this.popupService.openPopup('Error updating shoe', error);
             }
           });
-       }
+        }
     }
   }
 }

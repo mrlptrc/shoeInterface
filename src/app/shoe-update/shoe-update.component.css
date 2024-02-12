@@ -5,11 +5,13 @@ body{
     background-size: cover;
 	min-height:100vh;
 }
+
 .input-container{
     margin-top: 10%;
 	position:relative;
 	margin-bottom:25px;
 }
+
 .input-container label{
     font-weight: bold;
 	position:absolute;
@@ -20,6 +22,7 @@ body{
     pointer-events:none;
 	transition: all 0.5s ease-in-out;
 }
+
 .input-container input{ 
   border:0;
   border-bottom:1px solid #555;  
@@ -29,6 +32,7 @@ body{
   font-size:16px;
   color: black;	
 }
+
 .input-container input:focus{ 
  border:none;	
  outline:none;

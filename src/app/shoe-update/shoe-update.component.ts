@@ -6,10 +6,9 @@ import { PopupService } from '../popup.service';
 @Component({
   selector: 'app-shoe-update',
   templateUrl: './shoe-update.component.html',
-  styleUrls: ['./shoe-update.component.css']
+  styleUrls: ['./shoe-update.component.css'],
 })
 
-//To solve the problem, I would add the missing ngOnInit method to the ShoeDeleteComponent class.
 export class ShoeUpdateComponent implements OnInit {
   updateShoeForm: FormGroup;
   shoeIdToUpdate: string;
@@ -30,7 +29,6 @@ export class ShoeUpdateComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Add your initialization logic here
   }
 
   onUpdateShoeSubmit() {
@@ -49,10 +47,10 @@ export class ShoeUpdateComponent implements OnInit {
         if (updatedShoeId) {
           this.shoeService.updateShoe(updatedShoeId, updatedShoeData).subscribe({
             next: (response) => {
-              this.popupService.openPopup('Shoe updated successfully', response);
+              this.popupService.openPopup('Shoe updated successfully!', response);
             },
             error: (error) => {
-              this.popupService.openPopup('Error updating shoe', error);
+              this.popupService.openPopup('An error ocurred updating a shoe.', error);
             }
           });
         }

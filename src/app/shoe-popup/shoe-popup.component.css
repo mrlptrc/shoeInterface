@@ -38,6 +38,10 @@ body{
     justify-content: center;
 }
 
+.popup-button button{
+  margin-right: 10px;
+}
+
 .close-button {
   appearance: none;
   background-color: #000000;

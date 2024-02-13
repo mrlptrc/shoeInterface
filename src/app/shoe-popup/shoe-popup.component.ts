@@ -16,4 +16,9 @@ export class ShoePopupComponent {
   close() {
     this.dialogRef.close();
   }
+
+  closeAndReload(){
+    this.dialogRef.close();
+    window.location.reload();
+  }
 }

@@ -6,14 +6,19 @@
   <title>ShoeInterface</title>
 </head>
 <body>
-  <router-outlet></router-outlet>
-  <div class="formconfig">
-  <app-shoe-create></app-shoe-create>
-  <app-shoe-update></app-shoe-update>
-  <app-shoe-delete></app-shoe-delete>
-  </div>
-  <div class="shoe-footer">
-    <footer>Made with <a href="https://angular.io/" target="_blank" rel="AngularJS's Link">AngularJS</a>, <a href="https://www.mongodb.com/en-us" target="_blank" rel="Mongo DB's Link">MongoDB</a> and <a href="http://https://spring.io/" target="_blank" rel="Spring Boot's Link">Spring Boot</a>. The source code is available on <a href="http://github.com/mrlptrc" target="_blank" rel="Project's Repository">Github</a></footer>
+  
+  <div class="container-control">
+      <router-outlet></router-outlet>
+    <div class="formconfig">
+      <app-shoe-create></app-shoe-create>
+      <app-shoe-update></app-shoe-update>
+      <app-shoe-delete></app-shoe-delete>
+    </div>
+
+    <div class="shoe-footer">
+      <footer>Made with <a href="https://angular.io/" target="_blank" rel="AngularJS's Link">AngularJS</a>, <a href="https://www.mongodb.com/en-us" target="_blank" rel="Mongo DB's Link">MongoDB</a> and <a href="http://https://spring.io/" target="_blank" rel="Spring Boot's Link">Spring Boot</a>. The source code is available on <a href="http://github.com/mrlptrc" target="_blank" rel="Project's Repository">Github</a></footer>
+    </div>
+
   </div>
 </body>
 </html>

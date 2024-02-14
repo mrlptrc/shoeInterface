@@ -13,12 +13,12 @@ export class ShoePopupComponent {
   ) {}
     isOpen: boolean = true;
     
-  close() {
-    this.dialogRef.close();
-  }
+close() {
+  this.dialogRef.close();
+}
 
-  closeAndReload(){
-    this.dialogRef.close();
-    window.location.reload();
-  }
+closeAndReload(){
+  this.dialogRef.close();
+  window.location.reload();
+}
 }

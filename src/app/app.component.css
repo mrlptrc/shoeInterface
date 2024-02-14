@@ -14,8 +14,8 @@ body{
     font-size: 0.9rem;
     line-height: 1rem;
     text-align: center;
-    position: fixed;
-    bottom: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
 }
 
 a{

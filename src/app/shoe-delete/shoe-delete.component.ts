@@ -22,6 +22,7 @@ export class ShoeDeleteComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('');
   }
 
   onDeleteShoeSubmit() {

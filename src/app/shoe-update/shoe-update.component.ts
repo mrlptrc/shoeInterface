@@ -29,6 +29,7 @@ export class ShoeUpdateComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('');
   }
 
   onUpdateShoeSubmit() {

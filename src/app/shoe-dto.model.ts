@@ -1,5 +1,5 @@
-export interface Shoe {
-    id: {$oid: string};
+export interface ShoeDTO {
+    id: string;
     brand: string;
     model: string;
     price: number;

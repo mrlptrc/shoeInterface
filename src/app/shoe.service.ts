@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Shoe } from './shoe.model';
+import { ShoeDTO } from './shoe-dto.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,16 @@ export class ShoeService {
     return this.http.delete(`${this.apiUrl}/delete/${shoeId}`);
   }
 
-  getAllShoes(): Observable<Shoe[]> {
-    return this.http.get<Shoe[]>(`${this.apiUrl}/all`);
+  getAllShoes(): Observable<ShoeDTO[]> {
+    return this.http.get<ShoeDTO[]>(`${this.apiUrl}/all`);
   }
+
+  searchShoes(keyword: string, exactMatch: boolean = false): Observable<ShoeDTO[]> {
+    let params = new HttpParams()
+      .set('keyword', keyword)
+      .set('exactMatch', String(exactMatch));
+  
+    return this.http.get<ShoeDTO[]>(`${this.apiUrl}/search`, { params });
+  }
+  
 }

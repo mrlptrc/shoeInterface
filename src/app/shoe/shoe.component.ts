@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoeService } from '../shoe.service';
-import { Shoe } from '../shoe.model';
 import { Router } from '@angular/router';
+import { ShoeDTO } from '../shoe-dto.model';
 
 @Component({
   selector: 'app-shoe',
@@ -10,16 +10,19 @@ import { Router } from '@angular/router';
 })
 
 export class ShoeComponent implements OnInit {
-  shoes: Shoe[] = [];
+  shoes: ShoeDTO[] = [];
+  searchKeyword: string = '';
+  exactMatch: boolean = false;
 
-  constructor(private shoeService: ShoeService, private router: Router) {}
+  constructor(
+    private shoeService: ShoeService, 
+    private router: Router) {}
 
   ngOnInit(): void {
     this.fetchShoes();  
   }
 
   fetchShoes() {
-    //updated the code to use the new recommended syntax for subscribing to observables in RxJS.
     this.shoeService.getAllShoes().subscribe({
       next: (data) => {
         this.shoes = data;
@@ -31,7 +34,6 @@ export class ShoeComponent implements OnInit {
   }
 
   deleteShoe(id: string) {
-    //updated the code to use the new recommended syntax for subscribing to observables in RxJS.
     this.shoeService.deleteShoe(id).subscribe({
       next: (response) => {
         console.log('Shoe deleted successfully:', response);
@@ -41,5 +43,17 @@ export class ShoeComponent implements OnInit {
         console.error('Error deleting shoe:', error);
       }
     });
+  }
+
+  searchItem() {
+    this.shoeService.searchShoes(this.searchKeyword, this.exactMatch).subscribe({
+      next: (data) => {
+        this.shoes = data;
+      },
+      error: (error) => {
+        console.error('Error searching shoes:', error);
+      }
+    });
+    this.router.navigate(['/search']);
   }
 }

@@ -55,4 +55,8 @@ export class ShoeComponent implements OnInit {
       }
     });
   }
+
+  redirectToShoeDetail(shoeId: string) {
+    this.router.navigate(['/shoes', shoeId]);  
+  }
 }

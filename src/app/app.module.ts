@@ -11,9 +11,10 @@ import { ShoeUpdateComponent } from './shoe-update/shoe-update.component';
 import { ShoeDeleteComponent } from './shoe-delete/shoe-delete.component';
 import { ShoePopupComponent } from './shoe-popup/shoe-popup.component';
 import { SearchComponentComponent } from './search-component/search-component.component';
+import { ShoeDetailComponent } from './shoe-detail/shoe-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, ShoeComponent, ShoeCreateComponent, ShoeUpdateComponent, ShoeDeleteComponent, ShoePopupComponent, SearchComponentComponent],
+  declarations: [AppComponent, ShoeComponent, ShoeCreateComponent, ShoeUpdateComponent, ShoeDeleteComponent, ShoePopupComponent, SearchComponentComponent, ShoeDetailComponent],
   imports: [BrowserModule, HttpClientModule, ReactiveFormsModule, FormsModule, AppRoutingModule, CommonModule],
   bootstrap: [AppComponent],
 })

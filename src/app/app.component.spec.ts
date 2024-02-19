@@ -17,6 +17,7 @@ describe('AppComponent', () => {
   it(`should have the 'shoe Interface' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
   });
 
   it('should render title', () => {

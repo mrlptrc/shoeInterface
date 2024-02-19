@@ -66,3 +66,40 @@
 .icons a{
     color: inherit;
 }
+
+
+.search-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-button{
+    height: 25px;
+    width: 25px;
+    background: transparent;
+}
+
+.search-icon{
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    background: transparent;
+}
+
+.search-box{
+    height: 25px;
+    width: 250px;
+    padding: 3%;
+    background-color: transparent;
+    outline: none;
+}
+
+.example{
+    display: flex;
+    align-items: space-between;
+    height: 25px;
+    width: 250px;
+    border-radius: 10px;
+    border: 1px solid black;
+}

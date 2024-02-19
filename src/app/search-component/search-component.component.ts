@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ShoeDTO } from '../shoe-dto.model';
 
 @Component({
@@ -6,8 +6,13 @@ import { ShoeDTO } from '../shoe-dto.model';
   templateUrl: './search-component.component.html',
   styleUrl: './search-component.component.css'
 })
-export class SearchComponentComponent{
+export class SearchComponentComponent implements OnInit{
   shoes: ShoeDTO[] = [];
+
+  ngOnInit() {
+    console.log("chamando search")
+  }
+
 
 
 }

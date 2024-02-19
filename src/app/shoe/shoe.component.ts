@@ -19,7 +19,7 @@ export class ShoeComponent implements OnInit {
     private router: Router) {}
 
   ngOnInit(): void {
-    this.fetchShoes();  
+    console.log("ngOn init") 
   }
 
   fetchShoes() {
@@ -54,6 +54,5 @@ export class ShoeComponent implements OnInit {
         console.error('Error searching shoes:', error);
       }
     });
-    this.router.navigate(['/search']);
   }
 }

@@ -28,7 +28,7 @@ export class ShoeService {
   }
 
   getShoeById(shoeId: string): Observable<any>{
-    return this.http.get(`${this.apiUrl}/get/${shoeId}`);
+    return this.http.get(`${this.apiUrl}/${shoeId}`);
   }
 
   searchShoes(keyword: string, exactMatch: boolean = false): Observable<ShoeDTO[]> {

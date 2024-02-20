@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ShoeDTO } from '../shoe-dto.model';
-
+import { ShoeService } from '../shoe.service'; // Importe o serviço
 
 @Component({
   selector: 'app-shoe-detail',
@@ -13,12 +13,17 @@ export class ShoeDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private shoeService: ShoeService
   ) {}
 
   ngOnInit() {      
     this.route.params.subscribe(params => {
-      this.shoe = params['id'];
+      const id = params['id'];
+      this.shoeService.getShoeById(id).subscribe(shoe => {
+        this.shoe = shoe;
+        console.log(this.shoe);
+      });
     });
   }
 }

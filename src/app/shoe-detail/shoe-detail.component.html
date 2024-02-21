@@ -1,6 +1,26 @@
-<div *ngIf="shoe">
-    <h2>{{ shoe.brand }}</h2>
-    <p>{{ shoe.model }}</p>
-    <p>{{ shoe.price }}</p>
+<div class="card-container">
+  <div class="control-div">
+      <div class="title">
+        <h1 id="card-title">Card Details</h1>
+      </div>
+    <div class="card-details">
+      <form [formGroup]="updateShoe" (ngSubmit)="goUpdate()">
+          <div class="input-container">
+            <label for="brand" class="label">Brand:</label>
+            <input type="text" id="brand" formControlName="updatedBrand" [(ngModel)]="shoe.brand" class="input" />
+          </div>
+          <div class="input-container">
+            <label for="model" class="label">Model:</label>
+            <input type="text" id="model" formControlName="updatedModel" [(ngModel)]="shoe.model" class="input" />
+          </div>
+          <div class="input-container">
+            <label for="price" class="label">Price:</label>
+            <input type="text" id="price" formControlName="updatedPrice" [(ngModel)]="shoe.price" class="input" />
+          </div>
+      </form>
+    <div class="footer-buttons">
+      <button id="cancel-button" (click)="cancelButton()">Cancel</button>
+      <button type="submit" id="update-button" (click)="goUpdate()">Update</button>
+    </div>
   </div>
-  
+</div>

@@ -36,7 +36,7 @@ export class ShoeService {
       .set('keyword', keyword)
       .set('exactMatch', String(exactMatch));
   
-    return this.http.get<ShoeDTO[]>(`${this.apiUrl}/search`, { params });
+    return this.http.get<ShoeDTO[]>(`${this.apiUrl}/search`, { params })
   }
   
 }

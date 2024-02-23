@@ -42,7 +42,10 @@
 
 <div class="shoe-container">
     <div class="shoe-card" *ngFor="let shoe of shoes" (click)="redirectToShoeDetail(shoe.id)">
+        <div class="card-top">
         <h2 id="brand">{{ shoe.brand }}</h2>
+            <img src="../../assets/images/trash.png" alt="delete" (click)="popupService.openDeletePopup('Pick your option', shoe.id , $event)">
+        </div>
         <h4 id="model">{{ shoe.model }}</h4>
         <h5 id="price">R${{ shoe.price }}</h5>
         <div class="shoe-id">

@@ -1,0 +1,12 @@
+<div class="overlay" *ngIf="isOpen">
+</div>
+<div class="popup-container">
+    <div class="popup-message">
+        <p>{{ data.message }}</p>
+    </div>
+    <div class="popup-button">
+        <button class="close-button" mat-button (click)="close()">Close</button>
+        <button class="close-button" mat-button (click)="deleteButton()">Delete</button>
+    </div>
+</div>
+  

@@ -3,7 +3,6 @@ import { ShoeService } from '../shoe.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PopupService } from '../popup.service';
 
-
 @Component({
   selector: 'app-shoe-delete',
   templateUrl: './shoe-delete.component.html',

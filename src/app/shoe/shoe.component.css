@@ -47,6 +47,16 @@
     cursor: pointer;
 }
 
+.card-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-top img{
+    height: 20px;
+    width: 20px;
+}
+
 #model{
     height: 30px;
 }

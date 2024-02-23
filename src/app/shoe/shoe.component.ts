@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ShoeService } from '../shoe.service';
 import { Router } from '@angular/router';
 import { ShoeDTO } from '../shoe-dto.model';
+import { PopupService } from '../popup.service';
 
 @Component({
   selector: 'app-shoe',
@@ -15,29 +16,18 @@ export class ShoeComponent implements OnInit {
   exactMatch: boolean = false;
 
   constructor(
+    public popupService: PopupService,
     private shoeService: ShoeService, 
     private router: Router) {}
 
   ngOnInit(): void {
-    console.log("ngOn init") 
-  }
-
-  fetchShoes() {
-    this.shoeService.getAllShoes().subscribe({
-      next: (data) => {
-        this.shoes = data;
-      },
-      error: (error) => {
-        console.error('Error fetching shoes:', error);
-      }
-    });
+    console.log("ngOn init");
   }
 
   deleteShoe(id: string) {
     this.shoeService.deleteShoe(id).subscribe({
       next: (response) => {
         console.log('Shoe deleted successfully:', response);
-        this.fetchShoes();
       },
       error: (error) => {
         console.error('Error deleting shoe:', error);

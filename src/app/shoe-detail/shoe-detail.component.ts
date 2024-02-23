@@ -34,7 +34,6 @@ export class ShoeDetailComponent implements OnInit {
       const id = params['id'];
       this.shoeService.getShoeById(id).subscribe(shoe => {
         this.shoe = shoe;
-        console.log(this.shoe);
       });
     });
   }
@@ -59,7 +58,6 @@ export class ShoeDetailComponent implements OnInit {
         this.shoeService.updateShoe(this.shoe.id, updatedShoeData).subscribe({
           next: (response) => {
             this.popupService.openPopup('Shoe updated successfully!', response);
-            console.log("passoaq");
           },
           error: (error) => {
             this.popupService.openPopup('An error ocurred updating a shoe.', error);

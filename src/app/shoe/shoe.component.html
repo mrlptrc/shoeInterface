@@ -2,6 +2,21 @@
 
 <div class="header">
     <h1 class="title">ShoeAPI</h1>
+    <div class="top-container">
+
+        <div class="search-container">
+            <div class="example">
+                <input class="search-box" type="text" [(ngModel)]="searchKeyword"
+                    placeholder="Search for name or exact name..." />
+                <button class="search-button" (click)="searchItem()">
+                    <img class="search-icon" alt="search" src="assets/images/find.png" />
+                </button>
+            </div>
+        </div>
+        <div class="create-option">
+            <img src="assets/images/plus.png" alt="create-button" (click)="toggleCreate()">
+        </div>
+    </div>
     <div class="icons">
         <a aria-label="Murilo Patricio's Github Profile" target="_blank" href="https://github.com/mrlptrc">
             <div class="github-icon">
@@ -24,34 +39,44 @@
         </a>
     </div>
 </div>
-
-<div class="top-container">
-
-    <div class="search-container">
-        <div class="example">
-            <input class="search-box" type="text" [(ngModel)]="searchKeyword" placeholder="Search for name or exact name..." />
-            <button class="search-button" (click)="searchItem()">
-                <img class="search-icon" alt="search" src="assets/images/find.png" />
-            </button>
-        </div>
-    </div>
-    <div class="create-option">
-        <img src="assets/images/plus.png" alt="create-button" (click)="redirectToShoeCreate">
+<div class="belowHeader">
+    <div class="match-options">
+        <input type="radio" [(ngModel)]="exactMatch" id="exactMatch" name="match" value="true" />
+        <label for="exactMatch">Exact</label>
+        <input type="radio" [(ngModel)]="exactMatch" id="contains" name="match" value="false" />
+        <label for="contains">Contains</label>
     </div>
 </div>
 
-<div class="match-options">
-    <input type="radio" [(ngModel)]="exactMatch" id="exactMatch" name="match" value="true" />
-    <label for="exactMatch">Exact</label>
-    <input type="radio" [(ngModel)]="exactMatch" id="contains" name="match" value="false" />
-    <label for="contains">Contains</label>
+<div *ngIf="showCreate" class="create-div">
+    <div class="form-container">
+        <form [formGroup]="shoeForm" (ngSubmit)="onCreateSubmit()">
+            <div class="input-container">
+                <label for="brand" class="label">Brand:</label>
+                <input type="text" id="brand" formControlName="brand" class="input">
+            </div>
+
+            <div class="input-container">
+                <label for="model" class="label">Model:</label>
+                <input type="text" id="model" formControlName="model" class="input">
+            </div>
+            <div class="input-container">
+                <label for="price" class="label">Price:</label>
+                <input type="number" id="price" formControlName="price" class="input">
+            </div>
+
+            <button class="button-87" type="submit">Create Shoe</button>
+
+        </form>
+    </div>
 </div>
 
 <div class="shoe-container">
     <div class="shoe-card" *ngFor="let shoe of shoes" (click)="redirectToShoeDetail(shoe.id)">
         <div class="card-top">
-        <h2 id="brand">{{ shoe.brand }}</h2>
-            <img src="../../assets/images/trash.png" alt="delete-button" (click)="popupService.openDeletePopup('Pick your option', shoe.id , $event)">
+            <h2 id="brand">{{ shoe.brand }}</h2>
+            <img src="../../assets/images/trash.png" alt="delete-button"
+                (click)="popupService.openDeletePopup('Pick your option', shoe.id , $event)">
         </div>
         <h4 id="model">{{ shoe.model }}</h4>
         <h5 id="price">R${{ shoe.price }}</h5>

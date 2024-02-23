@@ -14,6 +14,7 @@ export class ShoeComponent implements OnInit {
   shoes: ShoeDTO[] = [];
   searchKeyword: string = '';
   exactMatch: boolean = false;
+  showCreate: boolean = false;
 
   constructor(
     public popupService: PopupService,
@@ -48,5 +49,9 @@ export class ShoeComponent implements OnInit {
 
   redirectToShoeDetail(shoeId: string) {
     this.router.navigate(['/shoes', shoeId]);  
+  }
+
+  redirectToShoeCreate() {
+    this.showCreate = true;
   }
 }

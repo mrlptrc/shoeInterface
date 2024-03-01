@@ -27,6 +27,13 @@
     gap: 30%;
 }
 
+.control-create{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    align-items: center;
+}
+
 #brand {
     font-size: 20px;
     justify-content: center;
@@ -234,13 +241,11 @@
 }
 
 .create-div{
+    border: 1px solid black;
     display: flex;
-    height: 300px;
-    width: 100%;
-}
-
-.form-container form    {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    border-radius: 4%;
+    justify-content: center;
 }

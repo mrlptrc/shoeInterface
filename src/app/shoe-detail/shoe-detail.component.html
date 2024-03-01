@@ -7,15 +7,15 @@
       <form [formGroup]="updateShoe" (ngSubmit)="goUpdate()">
           <div class="input-container">
             <label for="brand" class="label">Brand:</label>
-            <input type="text" id="brand" formControlName="updatedBrand" [(ngModel)]="shoe.brand" class="input" />
+            <input type="text" id="brand" formControlName="updatedBrand" class="input" />
           </div>
           <div class="input-container">
             <label for="model" class="label">Model:</label>
-            <input type="text" id="model" formControlName="updatedModel" [(ngModel)]="shoe.model" class="input" />
+            <input type="text" id="model" formControlName="updatedModel" class="input" />
           </div>
           <div class="input-container">
             <label for="price" class="label">Price:</label>
-            <input type="text" id="price" formControlName="updatedPrice" [(ngModel)]="shoe.price" class="input" />
+            <input type="text" id="price" formControlName="updatedPrice" class="input" />
           </div>
       </form>
     <div class="control-footer">

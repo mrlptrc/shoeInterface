@@ -27,15 +27,25 @@ export class ShoeDetailComponent implements OnInit {
       updatedPrice: ['', Validators.min(0)],
     });
 
+    this.updateShoe.valueChanges.subscribe(data => this.onUpdateShoeValueChange(data));
   }
+
+
 
   ngOnInit() {      
     this.route.params.subscribe(params => {
       const id = params['id'];
       this.shoeService.getShoeById(id).subscribe(shoe => {
         this.shoe = shoe;
+        console.log(shoe);
       });
     });
+  }
+
+  onUpdateShoeValueChange(data: any) {
+    this.shoe.brand = data.updatedBrand;
+    this.shoe.model = data.updatedModel;
+    this.shoe.price = data.updatedPrice;
   }
 
   cancelButton(){
@@ -43,6 +53,8 @@ export class ShoeDetailComponent implements OnInit {
   }
 
   goUpdate(){    
+    console.log(this.updateShoe.value);
+    
     if(this.updateShoe.valid){
       const updatedBrand = this.updateShoe.get('updatedBrand')?.value;
       const updatedModel = this.updateShoe.get('updatedModel')?.value;

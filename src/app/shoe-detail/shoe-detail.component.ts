@@ -26,8 +26,6 @@ export class ShoeDetailComponent implements OnInit {
       updatedModel: ['', Validators.required],
       updatedPrice: ['', Validators.min(0)],
     });
-
-    this.updateShoe.valueChanges.subscribe(data => this.onUpdateShoeValueChange(data));
   }
 
 

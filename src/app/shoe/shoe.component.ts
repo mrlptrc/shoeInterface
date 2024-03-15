@@ -25,9 +25,9 @@ export class ShoeComponent implements OnInit {
     private fb: FormBuilder
     ) {
     this.shoeForm = this.fb.group({
-      createBrand: ['', Validators.required],
-      createModel: ['', Validators.required],
-      createPrice: ['', Validators.min(0)],
+      brand: ['', Validators.required],
+      model: ['', Validators.required],
+      price: ['', Validators.min(0)],
     });
   }
 
@@ -51,7 +51,6 @@ export class ShoeComponent implements OnInit {
     if (this.shoeForm.valid) {
       const shoeData = this.shoeForm.value;
       console.log("funfando dentro", shoeData);
-      
       this.shoeService.createShoe(shoeData).subscribe({
         next: (response) => {
           this.popupService.openPopup('Shoe Created Successfully!', response);

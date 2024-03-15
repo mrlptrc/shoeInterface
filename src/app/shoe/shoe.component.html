@@ -1,13 +1,13 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 
 <div class="header">
-    <h1 class="title">ShoeAPI</h1>
+    <h1 class="title" >ShoeAPI</h1>
     <div class="top-container">
 
         <div class="search-container">
             <div class="example">
                 <input class="search-box" type="text" [(ngModel)]="searchKeyword"
-                    placeholder="Search for name or exact name..." />
+                    placeholder="Search for brand or model..." />
                 <button class="search-button" (click)="searchItem()">
                     <img class="search-icon" alt="search" src="assets/images/find.png" />
                 </button>
@@ -50,28 +50,30 @@
 
 <div class="control-create">
 
-<div *ngIf="showCreate" class="create-div">
+    <div *ngIf="showCreate" class="create-div">
+        <h1>Create a Shoe</h1>
+
     <div class="form-container">
         <form [formGroup]="shoeForm" (ngSubmit)="onCreateSubmit()">
             <div class="input-container">
                 <label for="brand" class="label">Brand:</label>
-                <input type="text" id="brand" formControlName="createBrand" class="input">
+                <input type="text" id="brand" formControlName="brand" class="input">
             </div>
 
             <div class="input-container">
                 <label for="model" class="label">Model:</label>
-                <input type="text" id="model" formControlName="createModel" class="input">
+                <input type="text" id="model" formControlName="model" class="input">
             </div>
 
             <div class="input-container">
                 <label for="price" class="label">Price:</label>
-                <input type="number" id="price" formControlName="createPrice" class="input">
+                <input type="number" id="price" formControlName="price" class="input">
             </div>
 
-        </form>
             <div class="footer-buttons">
-                <button class="button-87" (click)="onCreateSubmit()">Create Shoe</button>
+                <button class="button-87" type="submit">Create Shoe</button>
             </div>
+        </form>
     </div>
 </div>
 
